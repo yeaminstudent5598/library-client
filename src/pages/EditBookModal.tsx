@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 interface EditBookModalProps {
   book: Book;
-  updateBook: (data: Partial<Book>) => Promise<any>;
+  updateBook: (args: { id: string; data: Partial<Book> }) => Promise<any>;
   onOpen: () => void;
 }
 
@@ -27,6 +27,7 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
     isbn: "",
     copies: 1,
     description: "",
+    available: true,
   });
   const [loading, setLoading] = useState(false);
 
@@ -39,16 +40,19 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
         isbn: book.isbn,
         copies: book.copies,
         description: book.description || "",
+        available: book.available ?? true,
       });
       onOpen();
     }
   }, [open, book, onOpen]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked } = e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: name === "copies" ? Number(value) : value,
+      [name]: type === "checkbox" ? checked : (name === "copies" ? Number(value) : value),
     }));
   };
 
@@ -56,7 +60,13 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
     e.preventDefault();
     setLoading(true);
     try {
-      await updateBook({ _id: book._id, ...form });
+      await updateBook({
+        id: book._id!,
+        data: {
+          ...form,
+          available: form.copies > 0 ? form.available : false,
+        },
+      });
       toast.success("Book updated successfully");
       setOpen(false);
     } catch (error) {
@@ -81,7 +91,8 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
             <DialogTitle>Edit Book</DialogTitle>
           </DialogHeader>
 
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-2 gap-4">
+           <div> <p>Title</p>
             <input
               name="title"
               value={form.title}
@@ -90,7 +101,9 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               className="w-full p-2 border rounded"
               required
               disabled={loading}
-            />
+            /></div>
+            <div>
+              <p>Author</p>
             <input
               name="author"
               value={form.author}
@@ -100,6 +113,9 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               required
               disabled={loading}
             />
+            </div>
+            <div>
+              <p>Genre</p>
             <select
               name="genre"
               value={form.genre}
@@ -116,6 +132,9 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               <option value="BIOGRAPHY">BIOGRAPHY</option>
               <option value="FANTASY">FANTASY</option>
             </select>
+            </div>
+            <div>
+              <p>ISBN</p>
             <input
               name="isbn"
               value={form.isbn}
@@ -125,10 +144,14 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               required
               disabled={loading}
             />
+            
+            </div>
+            <div>
+              <p>Copies</p>
             <input
               name="copies"
               type="number"
-              min={1}
+              min={0}
               value={form.copies}
               onChange={handleChange}
               placeholder="Copies"
@@ -136,6 +159,9 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               required
               disabled={loading}
             />
+            </div>
+            <div>
+              <p>Description</p>
             <textarea
               name="description"
               value={form.description}
@@ -145,6 +171,17 @@ export default function EditBookModal({ book, updateBook, onOpen }: EditBookModa
               rows={4}
               disabled={loading}
             />
+            </div>
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                name="available"
+                checked={form.available}
+                onChange={handleChange}
+                disabled={loading || form.copies === 0}
+              />
+              <span>Available</span>
+            </label>
           </div>
 
           <DialogFooter>
