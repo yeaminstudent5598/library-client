@@ -117,7 +117,7 @@ This frontend project can be deployed on hosting platforms like Netlify, Vercel,
 ## 👨‍💻 Author
 **Yeamin Madbor**  
 📍 Shariatpur, Bangladesh  
-📧 yeamin@example.com  
+📧 yeaminstudent5598@gmail.com  
 🌐 [Portfolio](https://glittering-halva-b2861e.netlify.app/)
 
 ## 📜 License
