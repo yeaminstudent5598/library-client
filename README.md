@@ -1,12 +1,59 @@
-# React + Vite
+# 📚 Library Management System — Frontend (Client)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+এই প্রজেক্টটি হলো **Frontend** অংশ, যা React, TypeScript, Redux Toolkit Query, এবং Tailwind CSS দিয়ে তৈরি করা হয়েছে। এখানে ইউজাররা বই দেখতে, যোগ করতে, সম্পাদনা করতে, মুছতে এবং ধার নিতে পারবে। এছাড়াও ধার নেওয়া বইয়ের সারাংশ দেখানো হয়েছে।
 
-Currently, two ofial plugins are available:
+> 🔗 Live Demo: [Click here to visit the frontend](https://your-frontend.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Tech             | Description              |
+|------------------|--------------------------|
+| React            | Frontend library         |
+| TypeScript       | Type safety              |
+| Redux Toolkit    | State management         |
+| RTK Query        | API calls and caching    |
+| Tailwind CSS     | Styling                  |
+| React Router DOM | Client-side routing      |
+
+---
+
+## ⚙️ Features
+
+- ✅ View all books in a table  
+- ✅ Add a new book  
+- ✅ Edit book details  
+- ✅ Delete a book with confirmation  
+- ✅ Borrow a book  
+- ✅ Show borrow summary  
+- ✅ Minimal clean UI  
+- ✅ Responsive design  
+- ✅ Toast notifications for feedback  
+- ✅ Optimistic UI updates
+
+---
+
+## 🧩 Folder Structure
+
+src/
+├── app/ # Redux store and API setup
+│ └── features/books/ # RTK Query API for books
+├── components/ # Reusable UI components
+│ └── book/ # Book related modals: Create, Edit, Borrow
+├── pages/ # Page components (Books, Summary)
+├── routes/ # Route definitions
+├── App.tsx # Main app layout and routing
+└── main.tsx # Application entry point
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yeaminstudent5598/library-client.git
+cd library-client
+npm install
+VITE_API_BASE_URL=https://your-backend.onrender.com/api
