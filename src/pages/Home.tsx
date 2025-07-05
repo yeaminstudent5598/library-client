@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await fetch("https://library-api-theta.vercel.app/api/books");
+        const res = await fetch("https://backend-side-nine.vercel.app/api/books");
         const json = await res.json();
         setBooks(json.data); // Your API returns { success, message, data: [...] }
       } catch (error) {
