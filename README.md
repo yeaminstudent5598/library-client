@@ -38,7 +38,7 @@ This is the **Frontend Client** for the **Minimal Library Management System** bu
 
 ## 📁 Folder Structure
 
-```bash
+
 src/
 ├── app/                    # Redux store & RTK Query API setup
 │   └── features/
@@ -54,4 +54,86 @@ src/
 
 
 ---
+
+## 📦 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yeaminstudent5598/library-client.git
+cd library-management-client
+
+---
+### 2. Install Dependencies
+
+```bash
+npm install
+
+---
+
+### 3. Setup Environment Variables
+Create a .env file in the root directory and add:
+
+```bash
+VITE_API_BASE_URL=https://your-backend-domain.com/api
+
+---
+
+### 4. Run the Development Server
+
+```bash
+npm run dev
+
+---
+
+### 🧪 Available Scripts
+
+```bash
+npm run dev       # Start local development server
+npm run build     # Create production build
+npm run preview   # Preview production build
+
+# Library Management System (Frontend)
+
+## 📄 Deployment
+This frontend project can be deployed on hosting platforms like Netlify, Vercel, or Firebase Hosting.
+
+### ✅ Netlify Example:
+- **Build Command:** `npm run build`
+- **Publish Directory:** `dist/`
+- **Environment Variables:** Add `VITE_API_BASE_URL` from `.env` in Netlify settings.
+
+## 🌟 Bonus Features Implemented
+
+| Feature                  | Status |
+|--------------------------|--------|
+| Optimistic UI Updates    | ✅     |
+| Toast Notifications      | ✅     |
+| Responsive Design        | ✅     |
+| Type-Safe Forms          | ✅     |
+
+## 👨‍💻 Author
+**Yeamin Madbor**  
+📍 Shariatpur, Bangladesh  
+📧 yeamin@example.com  
+🌐 [Portfolio](https://glittering-halva-b2861e.netlify.app/)
+
+## 📜 License
+This project is licensed under the **MIT License**. Feel free to use it for learning or personal purposes.
+
+## 📂 Backend Repository
+You can find the backend source code here:  
+🔗 [https://github.com/yeaminstudent5598/library-api.git](https://github.com/yeaminstudent5598/library-api.git)
+
+## 🙏 Acknowledgments
+This project was built as part of a web development assignment to demonstrate:
+
+- 🔧 RTK Query & Redux Toolkit integration
+- 📦 React + TypeScript modular architecture
+- 🌐 RESTful API communication
+- 🎨 Clean UI/UX using Tailwind CSS
+- 📁 Best practices in component organization
+
+
+
 
