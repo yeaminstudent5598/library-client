@@ -1,71 +1,53 @@
 # 📚 Library Management System – Frontend
 
-This is the **Frontend Client** for the Minimal Library Management System project, built with **React**, **TypeScript**, **Redux Toolkit Query**, and **Tailwind CSS**. This web application allows users to view, add, edit, delete, and borrow books, as well as view a summary of borrowed books.
+This is the **Frontend Client** for the **Minimal Library Management System** built with **React**, **TypeScript**, **Redux Toolkit Query**, and **Tailwind CSS**. The application allows users to manage books and borrowing without requiring authentication.
 
 > 🔗 **Live Site**: [https://your-frontend.netlify.app](https://your-frontend.netlify.app)  
-> 🔗 **Backend Repository**: [GitHub Link](https://github.com/your-username/library-management-backend)
+> 🔗 **Backend Repository**: [https://github.com/your-username/library-management-backend](https://github.com/your-username/library-management-backend)
 
 ---
 
 ## 🚀 Features
 
-- ✅ View all books in a responsive table layout
-- ✅ Add new books with type-safe forms
-- ✅ Edit existing book details with live updates
-- ✅ Delete books with confirmation
-- ✅ Borrow books with quantity and due date
-- ✅ View a borrow summary (aggregated report)
-- ✅ Optimistic UI updates for smoother UX
-- ✅ Toast notifications (success & error)
-- ✅ Clean modular codebase
-- ✅ Fully responsive across devices
+- 📖 View all books in a responsive table
+- ➕ Add a new book with a form
+- ✏️ Edit existing book details
+- ❌ Delete books with confirmation
+- 📥 Borrow books (with quantity & due date)
+- 📊 View a borrow summary (total borrow count per book)
+- ⚡ Optimistic UI updates
+- 🔔 Toast notifications for feedback
+- 💻 Fully responsive design
+- 🧼 Clean and modular codebase
 
 ---
 
 ## 🧪 Tech Stack
 
-| Tool             | Purpose                         |
+| Tool             | Purpose                          |
 |------------------|----------------------------------|
-| React            | Frontend Library                |
-| TypeScript       | Type Safety                     |
-| Redux Toolkit    | Global State Management         |
-| RTK Query        | Data Fetching & Caching         |
-| Tailwind CSS     | UI Styling                      |
-| React Router DOM | Client-side Routing             |
-| Vite             | Build Tool for React + TS       |
+| React            | Frontend UI framework            |
+| TypeScript       | Static type checking              |
+| Redux Toolkit    | State management                 |
+| RTK Query        | API fetching and caching         |
+| Tailwind CSS     | Utility-first CSS styling        |
+| React Router DOM | Client-side routing              |
+| Vite             | Fast dev server & build tool     |
 
 ---
 
 ## 📁 Folder Structure
 
+```bash
 src/
-├── app/ # Redux store & RTK Query API setup
-│ └── features/
-│ └── books/ # bookApi.ts for API calls
+├── app/                    # Redux store & RTK Query API setup
+│   └── features/
+│       └── books/          # bookApi.ts for API endpoints
 │
-├── components/ # Reusable UI components
-│ └── book/ # Modals: Create, Edit, Borrow
+├── components/             # Reusable UI components
+│   └── book/               # Modals: CreateBook, EditBook, BorrowBook
 │
-├── pages/ # Page components (Books, BorrowSummary, etc.)
-├── routes/ # React Router configuration
-├── App.tsx # Main layout with router outlet
-└── main.tsx # Application entry point
-
-
----
-
-## 📦 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/library-management-client.git
-cd library-management-client
-
-```bash
-npm install
-VITE_API_BASE_URL=https://your-backend-domain.com/api
-
-4. Run the Development Server
-```bash
-npm run dev
+├── pages/                  # Pages: Books, BorrowSummary, etc.
+├── routes/                 # React Router configuration
+├── App.tsx                 # Main layout & route outlet
+└── main.tsx                # Entry point
