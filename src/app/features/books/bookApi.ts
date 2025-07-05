@@ -13,7 +13,7 @@ export interface Book {
 
 export const bookApi = createApi({
   reducerPath: "bookApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://library-api-theta.vercel.app/api" }),
   tagTypes: ["Book"],
   endpoints: (builder) => ({
     getBooks: builder.query<Book[], void>({
