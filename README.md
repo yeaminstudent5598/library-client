@@ -36,9 +36,10 @@ This is the **Frontend Client** for the **Minimal Library Management System** bu
 
 ---
 
+
 ## 📁 Folder Structure
 
-
+```
 src/
 ├── app/                    # Redux store & RTK Query API setup
 │   └── features/
@@ -52,6 +53,7 @@ src/
 ├── App.tsx                 # Main layout & route outlet
 └── main.tsx                # Entry point
 
+```
 
 ---
 
@@ -62,13 +64,13 @@ src/
 ```bash
 git clone https://github.com/yeaminstudent5598/library-client.git
 cd library-management-client
-
+```
 ---
 ### 2. Install Dependencies
 
 ```bash
 npm install
-
+```
 ---
 
 ### 3. Setup Environment Variables
@@ -76,14 +78,14 @@ Create a .env file in the root directory and add:
 
 ```bash
 VITE_API_BASE_URL=https://your-backend-domain.com/api
-
+```
 ---
 
 ### 4. Run the Development Server
 
 ```bash
 npm run dev
-
+```
 ---
 
 ### 🧪 Available Scripts
@@ -92,7 +94,7 @@ npm run dev
 npm run dev       # Start local development server
 npm run build     # Create production build
 npm run preview   # Preview production build
-
+```
 # Library Management System (Frontend)
 
 ## 📄 Deployment
