@@ -1,25 +1,31 @@
-import App from "@/App";
-import Books from "@/pages/Books";
-import Borrow from "@/pages/BorrowBookModal";
-import BorrowSummary from "@/pages/BorrowSummary";
-import CreateBook from "@/pages/CreateBook";
-import EditBook from "@/pages/EditBookModal";
+import Main from "@/layout/Main";
+import { BookForm } from "@/pages/BookForm";
+import AllBook from "@/pages/AllBook";
 import Home from "@/pages/Home";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
+import Summery from "@/pages/Summery";
 
-const routes = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Main />,
     children: [
-      { path: "/", element: <Home /> },          
-      { path: "/books", element: <Books /> },
-      { path: "/create-book", element: <CreateBook /> },
-      { path: "/edit-book/:id", element: <EditBook /> },
-      { path: "/borrow/:id", element: <Borrow /> },
-      { path: "/books/borrow-summary", element: <BorrowSummary /> },
-    ],
+      {
+        path: "",
+        element: <Home />
+      },
+      {
+        path: "/addBook",
+        element: <BookForm />
+      },
+      {
+        path: "/allBook",
+        element: <AllBook />
+      },
+      {
+        path: "/summery",
+        element: <Summery />
+      }
+    ]
   },
 ]);
-
-export default routes;
